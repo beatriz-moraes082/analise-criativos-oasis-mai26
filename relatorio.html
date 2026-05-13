@@ -1,0 +1,1172 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Análise de criativos · Oásis Beach · Maio 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --trilha-bg: #E9E8E4;
+  --trilha-card: #FFFFFF;
+  --trilha-text: #1D1D1B;
+  --trilha-text-light: #454C47;
+  --trilha-text-mute: #717C72;
+  --trilha-accent: #EE4C20;
+  --trilha-accent-2: #E96735;
+  --trilha-dark: #212121;
+  --trilha-green: #39483A;
+  --trilha-green-soft: #4B916D;
+  --trilha-border: #D9D8D2;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Familjen Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+       background: var(--trilha-bg); color: var(--trilha-text); line-height: 1.55; font-size: 14px;
+       font-weight: 400; }
+.container { max-width: 1400px; margin: 0 auto; padding: 28px 24px 60px; }
+
+/* HERO */
+.hero { background: var(--trilha-dark); color: #fff;
+        padding: 36px 36px; border-radius: 20px; margin-bottom: 28px;
+        position: relative; overflow: hidden; }
+.hero-title { display: flex; align-items: stretch; gap: 18px; margin-top: 18px; }
+.hero-title .accent-mark { width: 5px; background: var(--trilha-accent);
+                            border-radius: 3px; flex-shrink: 0; }
+.hero h1 { margin: 0; font-size: 32px; font-weight: 600;
+           letter-spacing: -0.5px; line-height: 1.15; }
+.hero .tag { display: inline-block; background: rgba(255,255,255,.10); padding: 4px 12px;
+              border-radius: 999px; font-size: 12px; margin-right: 6px; font-weight: 500;
+              margin-bottom: 6px; color: rgba(255,255,255,.92);
+              border: 1px solid rgba(255,255,255,.12); }
+.trilha-logo { position: absolute; top: 30px; right: 30px; width: 64px; height: 64px;
+               opacity: 0.95; }
+
+/* SECTION */
+.section { background: var(--trilha-card); border-radius: 20px; padding: 28px 30px;
+           margin-bottom: 22px; border: 1px solid var(--trilha-border); }
+.section h2 { margin: 0 0 18px; font-size: 22px; font-weight: 600;
+              letter-spacing: -0.3px; color: var(--trilha-text); }
+.section h2::before { content: ''; display: inline-block; width: 18px; height: 3px;
+                       background: var(--trilha-accent); margin-right: 12px;
+                       vertical-align: middle; border-radius: 2px; }
+
+/* TABLE */
+.tab-wrap { overflow-x: auto; margin: 0 -8px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: left; padding: 12px 8px; background: var(--trilha-bg); font-weight: 600;
+     color: var(--trilha-text); font-size: 11px; text-transform: uppercase;
+     letter-spacing: .4px; border-bottom: 2px solid var(--trilha-border);
+     white-space: nowrap; }
+td { padding: 12px 8px; border-bottom: 1px solid var(--trilha-border); vertical-align: middle; }
+td.num { color: var(--trilha-text-mute); font-size: 12px; font-weight: 500; }
+td.thumb { padding: 4px; }
+td.thumb img { width: 56px; height: 56px; object-fit: cover; border-radius: 8px;
+               display: block; background: var(--trilha-bg);
+               border: 1px solid var(--trilha-border); }
+tr.v-manter-top td { background: rgba(57, 72, 58, 0.04); }
+tr.v-manter td { background: rgba(75, 145, 109, 0.04); }
+tr.v-aguardar td { background: rgba(217, 119, 6, 0.06); }
+tr.v-pausar td { background: rgba(238, 76, 32, 0.05); }
+tr.v-não-entregou td, tr.v-pausado td { background: rgba(0,0,0,0.015); }
+
+.rec-col { white-space: nowrap; }
+.dias-label { font-size: 10.5px; color: var(--trilha-text-mute);
+              margin-top: 4px; font-weight: 500; }
+
+.section-intro { font-size: 13px; color: var(--trilha-text-light);
+                 margin: -8px 0 18px; font-style: italic; }
+
+/* PRÓXIMOS PASSOS */
+.passo { border-radius: 14px; padding: 18px 22px; margin-bottom: 14px;
+        border: 1px solid var(--trilha-border); }
+.passo-keep { background: rgba(57, 72, 58, 0.05); border-left: 5px solid var(--trilha-green); }
+.passo-wait { background: rgba(217, 119, 6, 0.06); border-left: 5px solid #D97706; }
+.passo-pause { background: rgba(238, 76, 32, 0.05); border-left: 5px solid var(--trilha-accent); }
+.passo-info { background: rgba(0,0,0,0.025); border-left: 5px solid #9ca3af; }
+.passo-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.passo-tag { display: inline-block; padding: 3px 12px; border-radius: 999px;
+             color: #fff; font-size: 10.5px; font-weight: 700;
+             letter-spacing: .4px; text-transform: uppercase; }
+.passo-titulo { font-size: 14.5px; font-weight: 600; color: var(--trilha-text); }
+.passo-list { margin: 6px 0 10px; padding-left: 22px; font-size: 13px;
+              color: var(--trilha-text); line-height: 1.7; }
+.passo-list li { margin-bottom: 4px; }
+.passo-acao { font-size: 13px; color: var(--trilha-text-light); line-height: 1.65;
+              background: rgba(255,255,255,0.6); padding: 10px 14px;
+              border-radius: 8px; margin-top: 6px; }
+
+.cr-name { font-weight: 600; font-size: 14px; color: var(--trilha-text); }
+.cr-sub { font-size: 11.5px; color: var(--trilha-text-mute);
+          display: flex; align-items: center; gap: 6px; margin-top: 2px; }
+.status-tag { display: inline-block; padding: 2px 8px; border-radius: 999px;
+              font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .3px; }
+.status-tag.ativo { background: rgba(75, 145, 109, 0.18); color: #047857; }
+.status-tag.pausado { background: rgba(238, 76, 32, 0.15); color: var(--trilha-accent); }
+
+.badge { display: inline-block; padding: 5px 12px; border-radius: 999px;
+         color: #fff; font-size: 11px; font-weight: 600; letter-spacing: .3px;
+         white-space: nowrap; }
+
+.legenda { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 20px;
+           font-size: 12.5px; color: var(--trilha-text-light); }
+.legenda div { display: flex; align-items: center; gap: 8px; }
+
+.footer-note { text-align: center; color: var(--trilha-text-mute); font-size: 12px;
+               margin-top: 30px; padding: 20px; line-height: 1.7; }
+
+/* GALERIA */
+.galeria { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+@media (max-width: 1100px) { .galeria { grid-template-columns: 1fr; } }
+
+.gc { background: var(--trilha-card); border-radius: 18px; overflow: hidden;
+      display: flex; flex-direction: column;
+      border: 1px solid var(--trilha-border);
+      border-top: 5px solid #9ca3af; }
+.gc.card-manter-top { border-top-color: var(--trilha-green); }
+.gc.card-manter { border-top-color: var(--trilha-green-soft); }
+.gc.card-aguardar { border-top-color: #D97706; }
+.gc.card-pausar { border-top-color: var(--trilha-accent); }
+.gc.card-pausado, .gc.card-não-entregou { border-top-color: #9ca3af; }
+
+.gc-img { position: relative; background: var(--trilha-bg); min-height: 320px;
+          display: flex; align-items: center; justify-content: center; }
+.gc-img img { width: 100%; max-height: 480px; object-fit: contain; display: block; }
+.gc-img .no-img { color: var(--trilha-text-mute); padding: 60px; }
+.vd-badge { position: absolute; top: 14px; left: 14px; background: var(--trilha-dark);
+            color: #fff; padding: 5px 12px; border-radius: 999px; font-size: 10.5px;
+            font-weight: 600; letter-spacing: .5px; }
+.vd-badge.img { background: var(--trilha-accent); }
+.status-overlay { position: absolute; top: 14px; right: 14px; }
+
+.gc-body { padding: 22px; }
+.gc-head { display: flex; justify-content: space-between; align-items: flex-start;
+           gap: 12px; margin-bottom: 16px; }
+.gc-camp-chip { display: inline-block; background: var(--trilha-accent);
+                color: #fff; padding: 3px 10px; border-radius: 999px;
+                font-size: 10.5px; font-weight: 700; letter-spacing: .4px;
+                text-transform: uppercase; margin-bottom: 8px; }
+.gc-name { font-weight: 600; font-size: 17px; color: var(--trilha-text);
+           margin-bottom: 4px; letter-spacing: -0.2px; }
+.gc-sub { font-size: 12px; color: var(--trilha-text-mute); }
+
+.gc-copy { background: var(--trilha-bg); border-radius: 10px; padding: 14px 16px;
+          font-size: 13px; line-height: 1.6; margin-bottom: 16px;
+          border-left: 3px solid var(--trilha-accent); }
+.gc-copy-label { font-size: 10px; font-weight: 700; color: var(--trilha-text-mute);
+                letter-spacing: .8px; margin-bottom: 8px; }
+.gc-copy-text { color: var(--trilha-text); }
+
+.gc-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+             margin-bottom: 14px; }
+.gc-metric { background: var(--trilha-bg); padding: 10px 12px; border-radius: 10px;
+            display: flex; flex-direction: column; }
+.gc-metric span { font-size: 10px; color: var(--trilha-text-mute);
+                 text-transform: uppercase; letter-spacing: .4px; font-weight: 600; }
+.gc-metric b { font-size: 15px; color: var(--trilha-text); margin-top: 3px;
+              font-weight: 600; }
+.gc-metric.primary { background: var(--trilha-dark); }
+.gc-metric.primary span { color: rgba(255,255,255,.6); }
+.gc-metric.primary b { color: #fff; font-size: 17px; }
+
+.funil { margin-bottom: 14px; background: rgba(238, 76, 32, 0.06);
+        border-radius: 10px; padding: 14px 16px;
+        border-left: 3px solid var(--trilha-accent); }
+.funil-title { font-size: 11px; color: var(--trilha-accent); font-weight: 700;
+               text-transform: uppercase; letter-spacing: .5px; margin-bottom: 10px; }
+.funil-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.funil-cell { background: #fff; padding: 7px 10px; border-radius: 6px;
+             border: 1px solid var(--trilha-border); }
+.funil-cell span { font-size: 9.5px; color: var(--trilha-text-mute);
+                  text-transform: uppercase; font-weight: 600;
+                  letter-spacing: .3px; display: block; }
+.funil-cell b { font-size: 13.5px; color: var(--trilha-text); font-weight: 600; }
+
+.gc-verdict { font-size: 12.5px; color: var(--trilha-text-light); padding: 11px 14px;
+             background: var(--trilha-bg); border-radius: 8px; }
+.ig-link { display: inline-block; margin-top: 12px; font-size: 12.5px;
+          color: var(--trilha-accent); text-decoration: none; font-weight: 600; }
+.ig-link:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="hero">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="trilha-logo">
+  <g fill="#EE4C20">
+    <rect x="44" y="10" width="12" height="80" rx="2"/>
+    <rect x="44" y="10" width="12" height="80" rx="2" transform="rotate(45 50 50)"/>
+    <rect x="44" y="10" width="12" height="80" rx="2" transform="rotate(90 50 50)"/>
+    <rect x="44" y="10" width="12" height="80" rx="2" transform="rotate(135 50 50)"/>
+  </g>
+</svg>
+  <span class="tag">Fellipe Carneiro ✻ Trilha Performance Digital</span>
+  <span class="tag">Período: 04 a 13 de maio de 2026, 18:08</span>
+  <div class="hero-title">
+    <div class="accent-mark"></div>
+    <h1>Análise de criativos<br>Oásis Beach</h1>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Tabela comparativa</h2>
+  <div class="tab-wrap">
+  <table>
+    <thead><tr>
+      <th>#</th>
+      <th></th>
+      <th>Criativo</th>
+      <th>Campanha</th>
+      <th>Público</th>
+      <th>Investido</th>
+      <th>Leads</th>
+      <th>Qualif.</th>
+      <th>Visita /<br>Reunião</th>
+      <th>Venda</th>
+      <th>Custo<br>por lead</th>
+      <th>Custo por<br>qualificado</th>
+      <th>Custo por<br>visita</th>
+      <th>Recomendação</th>
+    </tr></thead>
+    <tbody><tr class="v-manter-top">
+      <td class="num">1</td>
+      <td class="thumb"><img src="media/bk_120235850731500287_vimg_3abda5571e.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Apresentação + Mensais (Top Performance)</div>
+        <div class="cr-sub">Vídeo <span class="status-tag ativo">Ativo</span></div>
+      </td>
+      <td>Top Performance</td>
+      <td>25+ | BR | Semelhante compradores 2%</td>
+      <td>R$ 283,99</td>
+      <td>34</td>
+      <td><b style="color:#39483A">7</b></td>
+      <td><b style="color:#39483A">2</b></td>
+      <td>0</td>
+      <td><b>R$ 8,35</b></td>
+      <td><b>R$ 40,57</b></td>
+      <td><b>R$ 142,00</b></td>
+      <td class="rec-col"><span class="badge" style="background:#39483A">MANTER ⭐</span><div class="dias-label">rodou 10 dias</div></td>
+    </tr>
+<tr class="v-manter-top">
+      <td class="num">2</td>
+      <td class="thumb"><img src="media/bk_120235850731520287_vimg_716f0aba6c.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Apresentação + Mensais (Top Performance)</div>
+        <div class="cr-sub">Vídeo <span class="status-tag ativo">Ativo</span></div>
+      </td>
+      <td>Top Performance</td>
+      <td>25+ | SP/BH/DF/MT | Lote de terreno</td>
+      <td>R$ 319,17</td>
+      <td>28</td>
+      <td><b style="color:#39483A">5</b></td>
+      <td><b style="color:#39483A">1</b></td>
+      <td>0</td>
+      <td><b>R$ 11,40</b></td>
+      <td><b>R$ 63,83</b></td>
+      <td><b>R$ 319,17</b></td>
+      <td class="rec-col"><span class="badge" style="background:#39483A">MANTER ⭐</span><div class="dias-label">rodou 10 dias</div></td>
+    </tr>
+<tr class="v-manter">
+      <td class="num">3</td>
+      <td class="thumb"><img src="media/bk_120235850731460287_vimg_bf5dec35a5.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Apresentação + Mensais (Top Performance)</div>
+        <div class="cr-sub">Vídeo <span class="status-tag ativo">Ativo</span></div>
+      </td>
+      <td>Top Performance</td>
+      <td>25+ | Alagoas | Lote de terreno</td>
+      <td>R$ 226,23</td>
+      <td>20</td>
+      <td><b style="color:#39483A">4</b></td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>R$ 11,31</b></td>
+      <td><b>R$ 56,56</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><span class="badge" style="background:#4B916D">MANTER</span><div class="dias-label">rodou 10 dias</div></td>
+    </tr>
+<tr class="v-manter">
+      <td class="num">4</td>
+      <td class="thumb"><img src="media/bk_120245959465810287_img_3f721181ba.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Entrada + Mensais</div>
+        <div class="cr-sub">Imagem <span class="status-tag ativo">Ativo</span></div>
+      </td>
+      <td>Oásis 07/05</td>
+      <td>25+ | SP/BH/DF/MT | Lote de terreno</td>
+      <td>R$ 165,79</td>
+      <td>23</td>
+      <td><b style="color:#39483A">3</b></td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>R$ 7,21</b></td>
+      <td><b>R$ 55,26</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><span class="badge" style="background:#4B916D">MANTER</span><div class="dias-label">rodou 6 dias</div></td>
+    </tr>
+<tr class="v-manter">
+      <td class="num">5</td>
+      <td class="thumb"><img src="media/bk_120245959465910287_img_3f721181ba.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Entrada + Mensais</div>
+        <div class="cr-sub">Imagem <span class="status-tag ativo">Ativo</span></div>
+      </td>
+      <td>Oásis 07/05</td>
+      <td>25+ | Alagoas | Lote de terreno</td>
+      <td>R$ 128,12</td>
+      <td>19</td>
+      <td><b style="color:#39483A">2</b></td>
+      <td><b style="color:#39483A">2</b></td>
+      <td>0</td>
+      <td><b>R$ 6,74</b></td>
+      <td><b>R$ 64,06</b></td>
+      <td><b>R$ 64,06</b></td>
+      <td class="rec-col"><span class="badge" style="background:#4B916D">MANTER</span><div class="dias-label">rodou 6 dias</div></td>
+    </tr>
+<tr class="v-aguardar">
+      <td class="num">6</td>
+      <td class="thumb"><img src="media/bk_120245959465880287_img_b722f0ecc2.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Valor total + Mensais</div>
+        <div class="cr-sub">Imagem <span class="status-tag ativo">Ativo</span></div>
+      </td>
+      <td>Oásis 07/05</td>
+      <td>25+ | Alagoas | Lote de terreno</td>
+      <td>R$ 13,58</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>R$ 4,53</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><span class="badge" style="background:#D97706">AGUARDAR</span><div class="dias-label">rodou 6 dias</div></td>
+    </tr>
+<tr class="v-pausar">
+      <td class="num">7</td>
+      <td class="thumb"><img src="media/bk_120245959465980287_img_3f721181ba.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Entrada + Mensais</div>
+        <div class="cr-sub">Imagem <span class="status-tag ativo">Ativo</span></div>
+      </td>
+      <td>Oásis 07/05</td>
+      <td>25+ | BR | Semelhante compradores 2%</td>
+      <td>R$ 143,66</td>
+      <td>17</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>R$ 8,45</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><span class="badge" style="background:#EE4C20">PAUSAR</span><div class="dias-label">rodou 6 dias</div></td>
+    </tr>
+<tr class="v-não-entregou">
+      <td class="num">8</td>
+      <td class="thumb"><img src="media/bk_120245959466010287_img_b52df09f52.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Aérea + Mensais</div>
+        <div class="cr-sub">Imagem <span class="status-tag ativo">Ativo</span></div>
+      </td>
+      <td>Oásis 07/05</td>
+      <td>25+ | Alagoas | Lote de terreno</td>
+      <td>R$ 1,85</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><span class="badge" style="background:#9ca3af">Não entregou</span><div class="dias-label">rodou 6 dias</div></td>
+    </tr>
+<tr class="v-pausado">
+      <td class="num">9</td>
+      <td class="thumb"><img src="media/bk_120245790057200287_vimg_8449eb0f6a.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Apresentação + Mensais</div>
+        <div class="cr-sub">Vídeo <span class="status-tag pausado">Pausado</span></div>
+      </td>
+      <td>Top Performance</td>
+      <td>25+ | BR | Semelhante compradores 2%</td>
+      <td>R$ 3,11</td>
+      <td>1</td>
+      <td><b style="color:#39483A">1</b></td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>R$ 3,11</b></td>
+      <td><b>R$ 3,11</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><div class="dias-label">rodou 3 dias</div></td>
+    </tr>
+<tr class="v-pausado">
+      <td class="num">10</td>
+      <td class="thumb"><img src="media/bk_120245788742720287_img_b52df09f52.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Aérea + Mensais</div>
+        <div class="cr-sub">Imagem <span class="status-tag pausado">Pausado</span></div>
+      </td>
+      <td>Top Performance</td>
+      <td>25+ | Alagoas | Lote de terreno</td>
+      <td>R$ 29,69</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><div class="dias-label">rodou 2 dias</div></td>
+    </tr>
+<tr class="v-pausado">
+      <td class="num">11</td>
+      <td class="thumb"><img src="media/bk_120245874082660287_img_3f721181ba.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Entrada + Mensais</div>
+        <div class="cr-sub">Imagem <span class="status-tag pausado">Pausado</span></div>
+      </td>
+      <td>Top Performance</td>
+      <td>25+ | Alagoas | Lote de terreno</td>
+      <td>R$ 23,42</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>R$ 23,42</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><div class="dias-label">rodou 1 dia</div></td>
+    </tr>
+<tr class="v-pausado">
+      <td class="num">12</td>
+      <td class="thumb"><img src="media/bk_120245959465970287_img_b722f0ecc2.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Valor total + Mensais</div>
+        <div class="cr-sub">Imagem <span class="status-tag pausado">Pausado</span></div>
+      </td>
+      <td>Oásis 07/05</td>
+      <td>25+ | BR | Semelhante compradores 2%</td>
+      <td>R$ 21,60</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><div class="dias-label">rodou 4 dias</div></td>
+    </tr>
+<tr class="v-pausado">
+      <td class="num">13</td>
+      <td class="thumb"><img src="media/bk_120245789919350287_img_b722f0ecc2.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Valor total + Mensais</div>
+        <div class="cr-sub">Imagem <span class="status-tag pausado">Pausado</span></div>
+      </td>
+      <td>Top Performance</td>
+      <td>25+ | Alagoas | Lote de terreno</td>
+      <td>R$ 21,39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>R$ 21,39</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><div class="dias-label">rodou 3 dias</div></td>
+    </tr>
+<tr class="v-pausado">
+      <td class="num">14</td>
+      <td class="thumb"><img src="media/bk_120245959466000287_vimg_31be902ba1.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Apresentação + Mensais</div>
+        <div class="cr-sub">Vídeo <span class="status-tag pausado">Pausado</span></div>
+      </td>
+      <td>Oásis 07/05</td>
+      <td>25+ | BR | Semelhante compradores 2%</td>
+      <td>R$ 17,56</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><div class="dias-label">rodou 1 dia</div></td>
+    </tr>
+<tr class="v-pausado">
+      <td class="num">15</td>
+      <td class="thumb"><img src="media/bk_120245959465920287_vimg_a4c71c0b2c.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Apresentação + Mensais</div>
+        <div class="cr-sub">Vídeo <span class="status-tag pausado">Pausado</span></div>
+      </td>
+      <td>Oásis 07/05</td>
+      <td>25+ | SP/BH/DF/MT | Lote de terreno</td>
+      <td>R$ 17,15</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><div class="dias-label">rodou 1 dia</div></td>
+    </tr>
+<tr class="v-pausado">
+      <td class="num">16</td>
+      <td class="thumb"><img src="media/bk_120245959465790287_img_b722f0ecc2.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Valor total + Mensais</div>
+        <div class="cr-sub">Imagem <span class="status-tag pausado">Pausado</span></div>
+      </td>
+      <td>Oásis 07/05</td>
+      <td>25+ | SP/BH/DF/MT | Lote de terreno</td>
+      <td>R$ 14,91</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><div class="dias-label">rodou 4 dias</div></td>
+    </tr>
+<tr class="v-pausado">
+      <td class="num">17</td>
+      <td class="thumb"><img src="media/bk_120245789843370287_img_b722f0ecc2.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Valor total + Mensais</div>
+        <div class="cr-sub">Imagem <span class="status-tag pausado">Pausado</span></div>
+      </td>
+      <td>Top Performance</td>
+      <td>25+ | SP/BH/DF/MT | Lote de terreno</td>
+      <td>R$ 14,91</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>R$ 7,46</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><div class="dias-label">rodou 3 dias</div></td>
+    </tr>
+<tr class="v-pausado">
+      <td class="num">18</td>
+      <td class="thumb"><img src="media/bk_120245959465890287_vimg_3fdae4fd76.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Apresentação + Mensais</div>
+        <div class="cr-sub">Vídeo <span class="status-tag pausado">Pausado</span></div>
+      </td>
+      <td>Oásis 07/05</td>
+      <td>25+ | Alagoas | Lote de terreno</td>
+      <td>R$ 13,10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><div class="dias-label">rodou 1 dia</div></td>
+    </tr>
+<tr class="v-pausado">
+      <td class="num">19</td>
+      <td class="thumb"><img src="media/bk_120245789919340287_img_b722f0ecc2.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Valor total + Mensais</div>
+        <div class="cr-sub">Imagem <span class="status-tag pausado">Pausado</span></div>
+      </td>
+      <td>Top Performance</td>
+      <td>25+ | BR | Semelhante compradores 2%</td>
+      <td>R$ 11,97</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>R$ 5,99</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><div class="dias-label">rodou 3 dias</div></td>
+    </tr>
+<tr class="v-pausado">
+      <td class="num">20</td>
+      <td class="thumb"><img src="media/bk_120245790057190287_vimg_31a74f9042.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Apresentação + Mensais</div>
+        <div class="cr-sub">Vídeo <span class="status-tag pausado">Pausado</span></div>
+      </td>
+      <td>Top Performance</td>
+      <td>25+ | Alagoas | Lote de terreno</td>
+      <td>R$ 4,87</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><div class="dias-label">rodou 3 dias</div></td>
+    </tr>
+<tr class="v-pausado">
+      <td class="num">21</td>
+      <td class="thumb"><img src="media/bk_120245789831960287_img_b52df09f52.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Aérea + Mensais</div>
+        <div class="cr-sub">Imagem <span class="status-tag pausado">Pausado</span></div>
+      </td>
+      <td>Top Performance</td>
+      <td>25+ | SP/BH/DF/MT | Lote de terreno</td>
+      <td>R$ 4,53</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><div class="dias-label">rodou 3 dias</div></td>
+    </tr>
+<tr class="v-pausado">
+      <td class="num">22</td>
+      <td class="thumb"><img src="media/bk_120245789983060287_vimg_22af9964da.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Apresentação + Mensais</div>
+        <div class="cr-sub">Vídeo <span class="status-tag pausado">Pausado</span></div>
+      </td>
+      <td>Top Performance</td>
+      <td>25+ | SP/BH/DF/MT | Lote de terreno</td>
+      <td>R$ 3,89</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><div class="dias-label">rodou 3 dias</div></td>
+    </tr>
+<tr class="v-pausado">
+      <td class="num">23</td>
+      <td class="thumb"><img src="media/bk_120245874082670287_img_3f721181ba.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Entrada + Mensais</div>
+        <div class="cr-sub">Imagem <span class="status-tag pausado">Pausado</span></div>
+      </td>
+      <td>Top Performance</td>
+      <td>25+ | BR | Semelhante compradores 2%</td>
+      <td>R$ 2,72</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>R$ 2,72</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><div class="dias-label">rodou 2 dias</div></td>
+    </tr>
+<tr class="v-pausado">
+      <td class="num">24</td>
+      <td class="thumb"><img src="media/bk_120245874016290287_img_3f721181ba.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Entrada + Mensais</div>
+        <div class="cr-sub">Imagem <span class="status-tag pausado">Pausado</span></div>
+      </td>
+      <td>Top Performance</td>
+      <td>25+ | SP/BH/DF/MT | Lote de terreno</td>
+      <td>R$ 2,57</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><div class="dias-label">rodou 2 dias</div></td>
+    </tr>
+<tr class="v-pausado">
+      <td class="num">25</td>
+      <td class="thumb"><img src="media/bk_120245790341330287_vimg_1bcde718f6.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Apresentação + Valor Total</div>
+        <div class="cr-sub">Vídeo <span class="status-tag pausado">Pausado</span></div>
+      </td>
+      <td>Top Performance</td>
+      <td>25+ | BR | Semelhante compradores 2%</td>
+      <td>R$ 1,26</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><div class="dias-label">rodou 3 dias</div></td>
+    </tr>
+<tr class="v-pausado">
+      <td class="num">26</td>
+      <td class="thumb"><img src="media/bk_120245790106690287_vimg_6bbe222f39.jpg" alt="" loading="lazy"/></td>
+      <td>
+        <div class="cr-name">Apresentação + Valor Total</div>
+        <div class="cr-sub">Vídeo <span class="status-tag pausado">Pausado</span></div>
+      </td>
+      <td>Top Performance</td>
+      <td>25+ | SP/BH/DF/MT | Lote de terreno</td>
+      <td>R$ 1,01</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td><b>,</b></td>
+      <td class="rec-col"><div class="dias-label">rodou 3 dias</div></td>
+    </tr></tbody>
+  </table>
+  </div>
+
+  <div class="legenda">
+    <div><span class="badge" style="background:#39483A">MANTER ⭐</span> <span>Gerou 5+ qualificados</span></div>
+    <div><span class="badge" style="background:#4B916D">MANTER</span> <span>Gerou qualificados com bom custo</span></div>
+    <div><span class="badge" style="background:#D97706">AGUARDAR</span> <span>Amostra pequena, é cedo pra decidir</span></div>
+    <div><span class="badge" style="background:#EE4C20">PAUSAR</span> <span>Amostra suficiente sem qualificar</span></div>
+    <div><span class="badge" style="background:#9ca3af">Não entregou</span> <span>Meta não distribuiu</span></div>
+    <div><span style="color:#717C72"><i>vazio</i></span> <span>Criativo já pausado, sem recomendação</span></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Próximos passos sugeridos</h2>
+
+  <div class="passo passo-keep">
+    <div class="passo-head"><span class="passo-tag" style="background:#39483A">Levar adiante</span>
+      <span class="passo-titulo">3 criativos com sinal claro de qualificação</span></div>
+    <ul class="passo-list"><li><b>Apresentação + Mensais (Top Performance)</b> · 25+ | Alagoas | Lote de terreno · Top Performance <span style='color:var(--trilha-text-mute)'>(4 qualif, rodou 10d)</span></li><li><b>Entrada + Mensais</b> · 25+ | SP/BH/DF/MT | Lote de terreno · Oásis 07/05 <span style='color:var(--trilha-text-mute)'>(3 qualif, rodou 6d)</span></li><li><b>Entrada + Mensais</b> · 25+ | Alagoas | Lote de terreno · Oásis 07/05 <span style='color:var(--trilha-text-mute)'>(2 qualif, rodou 6d)</span></li></ul>
+  </div>
+
+  <div class="passo passo-wait">
+    <div class="passo-head"><span class="passo-tag" style="background:#D97706">Ainda é cedo</span>
+      <span class="passo-titulo">1 criativo sem amostra suficiente pra decidir</span></div>
+    <ul class="passo-list"><li><b>Valor total + Mensais</b> · 25+ | Alagoas | Lote de terreno · Oásis 07/05 <span style='color:var(--trilha-text-mute)'>(3 leads / 0 qualif, rodou 6d)</span></li></ul>
+    <div class="passo-acao">Esses ainda não geraram leads ou rodaram pouco tempo. <b>Cenário ideal antes de cravar manter/pausar:</b> rodar até atingir <b>10+ leads no CRM</b> com pelo menos <b>7 dias de exposição</b> pra Meta consolidar aprendizado. Hoje a regra é "pausa após 0 qualif em ≥6 leads e ≥5 dias rodando".</div>
+  </div>
+
+  <div class="passo passo-pause">
+    <div class="passo-head"><span class="passo-tag" style="background:#EE4C20">Pausar</span>
+      <span class="passo-titulo">1 criativo com amostra suficiente e sem qualificação</span></div>
+    <ul class="passo-list"><li><b>Entrada + Mensais</b> · 25+ | BR | Semelhante compradores 2% · Oásis 07/05 <span style='color:var(--trilha-text-mute)'>(17 leads / 0 qualif, rodou 6d)</span></li></ul>
+    <div class="passo-acao">Volume já mostra que esses não convertem em qualificado. Pausar libera verba pros que estão indo bem.</div>
+  </div>
+
+  <div class="passo passo-info">
+    <div class="passo-head"><span class="passo-tag" style="background:#9ca3af">Contexto</span>
+      <span class="passo-titulo">Por que é cedo pra cravar muita coisa em 9 dias</span></div>
+    <div class="passo-acao">
+      <b>Em 9 dias dá pra avaliar com confiança apenas criativos com 10+ leads no CRM e 5+ dias de rodagem.</b><br><br>
+      Dos 8 criativos ativos analisados:
+      <ul style="margin:8px 0 0;padding-left:20px">
+        <li><b>5</b> já têm sinal positivo de qualificação (manter)</li>
+        <li><b>1</b> ainda está em fase de teste, é cedo pra decidir</li>
+        <li><b>1</b> já tem amostra robusta sem qualificar (pausar)</li>
+        <li><b>1</b> não foi distribuído pelo algoritmo (verba quase nula)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Análise individual por criativo</h2>
+  <p class="section-intro">Apenas criativos atualmente ativos. Os pausados aparecem só na tabela acima.</p>
+  <div class="galeria">
+    
+    <div class="gc card-manter-top">
+      <div class="gc-img">
+        <img src="media/bk_120235850731500287_vimg_3abda5571e.jpg" alt="" />
+        <div class="vd-badge">VÍDEO</div>
+        <div class="status-overlay"><span class="status-tag ativo">Ativo</span></div>
+      </div>
+      <div class="gc-body">
+        <div class="gc-head">
+          <div>
+            <div class="gc-camp-chip">Top Performance</div>
+            <div class="gc-name">Apresentação + Mensais (Top Performance)</div>
+            <div class="gc-sub">Vídeo · 25+ | BR | Semelhante compradores 2%</div>
+          </div>
+          <span class="badge" style="background:#39483A">MANTER ⭐</span>
+        </div>
+        <div class="gc-copy">
+          <div class="gc-copy-label">LEGENDA</div>
+          <div class="gc-copy-text">🏝️ Oasis Beach - Lotes em condomínio à beira mar no litoral sul de Alagoas.<br><br>✅ Entrada facilitada<br>✅ Parcelas mensais de R$ 850,00<br>✅ Intercaladas anuais de R$ 4.589,61<br><br>⚜️Fellipe Carneiro | Creci 6753<br>📱(82) 9 9999-0589</div>
+        </div>
+        <div class="gc-metrics">
+          <div class="gc-metric primary"><span>Investido</span><b>R$ 283,99</b></div>
+          <div class="gc-metric primary"><span>Leads CRM</span><b>34</b></div>
+          <div class="gc-metric primary"><span>Qualificados</span><b>7</b></div>
+          <div class="gc-metric"><span>Custo por lead</span><b>R$ 8,35</b></div>
+          <div class="gc-metric"><span>Custo por qualificado</span><b>R$ 40,57</b></div>
+          <div class="gc-metric"><span>Custo por visita</span><b>R$ 142,00</b></div>
+          <div class="gc-metric"><span>Tempo de análise</span><b>10 dias</b></div>
+        </div>
+        
+        <div class="funil">
+          <div class="funil-title">Como esses leads avançaram no CRM</div>
+          <div class="funil-row">
+            <div class="funil-cell"><span>Qualificados</span><b>5</b></div>
+            <div class="funil-cell"><span>Visita / Reunião</span><b>1</b></div>
+            <div class="funil-cell"><span>Negociação</span><b>0</b></div>
+            <div class="funil-cell"><span>Proposta</span><b>1</b></div>
+            <div class="funil-cell"><span>Contrato</span><b>0</b></div>
+            <div class="funil-cell"><span>Venda</span><b>0</b></div>
+            <div class="funil-cell"><span>Descartados</span><b>1</b></div>
+          </div>
+        </div>
+        <div class="gc-verdict">
+          <b>Por quê:</b> 7 qualificados gerados em 10 dias
+        </div>
+        <a href="https://www.facebook.com/ads/library/?id=120235850731500287&country=BR" target="_blank" class="ig-link">Ver no Meta Ads Library ↗</a>
+      </div>
+    </div>
+    
+
+    <div class="gc card-manter-top">
+      <div class="gc-img">
+        <img src="media/bk_120235850731520287_vimg_716f0aba6c.jpg" alt="" />
+        <div class="vd-badge">VÍDEO</div>
+        <div class="status-overlay"><span class="status-tag ativo">Ativo</span></div>
+      </div>
+      <div class="gc-body">
+        <div class="gc-head">
+          <div>
+            <div class="gc-camp-chip">Top Performance</div>
+            <div class="gc-name">Apresentação + Mensais (Top Performance)</div>
+            <div class="gc-sub">Vídeo · 25+ | SP/BH/DF/MT | Lote de terreno</div>
+          </div>
+          <span class="badge" style="background:#39483A">MANTER ⭐</span>
+        </div>
+        <div class="gc-copy">
+          <div class="gc-copy-label">LEGENDA</div>
+          <div class="gc-copy-text">🏝️ Oasis Beach - Lotes em condomínio à beira mar no litoral sul de Alagoas.<br><br>✅ Entrada facilitada<br>✅ Parcelas mensais de R$ 850,00<br>✅ Intercaladas anuais de R$ 4.589,61<br><br>⚜️Fellipe Carneiro | Creci 6753<br>📱(82) 9 9999-0589</div>
+        </div>
+        <div class="gc-metrics">
+          <div class="gc-metric primary"><span>Investido</span><b>R$ 319,17</b></div>
+          <div class="gc-metric primary"><span>Leads CRM</span><b>28</b></div>
+          <div class="gc-metric primary"><span>Qualificados</span><b>5</b></div>
+          <div class="gc-metric"><span>Custo por lead</span><b>R$ 11,40</b></div>
+          <div class="gc-metric"><span>Custo por qualificado</span><b>R$ 63,83</b></div>
+          <div class="gc-metric"><span>Custo por visita</span><b>R$ 319,17</b></div>
+          <div class="gc-metric"><span>Tempo de análise</span><b>10 dias</b></div>
+        </div>
+        
+        <div class="funil">
+          <div class="funil-title">Como esses leads avançaram no CRM</div>
+          <div class="funil-row">
+            <div class="funil-cell"><span>Qualificados</span><b>4</b></div>
+            <div class="funil-cell"><span>Visita / Reunião</span><b>0</b></div>
+            <div class="funil-cell"><span>Negociação</span><b>1</b></div>
+            <div class="funil-cell"><span>Proposta</span><b>0</b></div>
+            <div class="funil-cell"><span>Contrato</span><b>0</b></div>
+            <div class="funil-cell"><span>Venda</span><b>0</b></div>
+            <div class="funil-cell"><span>Descartados</span><b>1</b></div>
+          </div>
+        </div>
+        <div class="gc-verdict">
+          <b>Por quê:</b> 5 qualificados gerados em 10 dias
+        </div>
+        <a href="https://www.facebook.com/ads/library/?id=120235850731520287&country=BR" target="_blank" class="ig-link">Ver no Meta Ads Library ↗</a>
+      </div>
+    </div>
+    
+
+    <div class="gc card-manter">
+      <div class="gc-img">
+        <img src="media/bk_120235850731460287_vimg_bf5dec35a5.jpg" alt="" />
+        <div class="vd-badge">VÍDEO</div>
+        <div class="status-overlay"><span class="status-tag ativo">Ativo</span></div>
+      </div>
+      <div class="gc-body">
+        <div class="gc-head">
+          <div>
+            <div class="gc-camp-chip">Top Performance</div>
+            <div class="gc-name">Apresentação + Mensais (Top Performance)</div>
+            <div class="gc-sub">Vídeo · 25+ | Alagoas | Lote de terreno</div>
+          </div>
+          <span class="badge" style="background:#4B916D">MANTER</span>
+        </div>
+        <div class="gc-copy">
+          <div class="gc-copy-label">LEGENDA</div>
+          <div class="gc-copy-text">🏝️ Oasis Beach - Lotes em condomínio à beira mar no litoral sul de Alagoas.<br><br>✅ Entrada facilitada<br>✅ Parcelas mensais de R$ 850,00<br>✅ Intercaladas anuais de R$ 4.589,61<br><br>⚜️Fellipe Carneiro | Creci 6753<br>📱(82) 9 9999-0589</div>
+        </div>
+        <div class="gc-metrics">
+          <div class="gc-metric primary"><span>Investido</span><b>R$ 226,23</b></div>
+          <div class="gc-metric primary"><span>Leads CRM</span><b>20</b></div>
+          <div class="gc-metric primary"><span>Qualificados</span><b>4</b></div>
+          <div class="gc-metric"><span>Custo por lead</span><b>R$ 11,31</b></div>
+          <div class="gc-metric"><span>Custo por qualificado</span><b>R$ 56,56</b></div>
+          <div class="gc-metric"><span>Custo por visita</span><b>,</b></div>
+          <div class="gc-metric"><span>Tempo de análise</span><b>10 dias</b></div>
+        </div>
+        
+        <div class="funil">
+          <div class="funil-title">Como esses leads avançaram no CRM</div>
+          <div class="funil-row">
+            <div class="funil-cell"><span>Qualificados</span><b>4</b></div>
+            <div class="funil-cell"><span>Visita / Reunião</span><b>0</b></div>
+            <div class="funil-cell"><span>Negociação</span><b>0</b></div>
+            <div class="funil-cell"><span>Proposta</span><b>0</b></div>
+            <div class="funil-cell"><span>Contrato</span><b>0</b></div>
+            <div class="funil-cell"><span>Venda</span><b>0</b></div>
+            <div class="funil-cell"><span>Descartados</span><b>1</b></div>
+          </div>
+        </div>
+        <div class="gc-verdict">
+          <b>Por quê:</b> 4 qualificados gerados em 10 dias
+        </div>
+        <a href="https://www.facebook.com/ads/library/?id=120235850731460287&country=BR" target="_blank" class="ig-link">Ver no Meta Ads Library ↗</a>
+      </div>
+    </div>
+    
+
+    <div class="gc card-manter">
+      <div class="gc-img">
+        <img src="media/bk_120245959465810287_img_3f721181ba.jpg" alt="" />
+        <div class="vd-badge img">IMAGEM</div>
+        <div class="status-overlay"><span class="status-tag ativo">Ativo</span></div>
+      </div>
+      <div class="gc-body">
+        <div class="gc-head">
+          <div>
+            <div class="gc-camp-chip">Oásis 07/05</div>
+            <div class="gc-name">Entrada + Mensais</div>
+            <div class="gc-sub">Imagem · 25+ | SP/BH/DF/MT | Lote de terreno</div>
+          </div>
+          <span class="badge" style="background:#4B916D">MANTER</span>
+        </div>
+        <div class="gc-copy">
+          <div class="gc-copy-label">LEGENDA</div>
+          <div class="gc-copy-text">🏝️ Oasis Beach - Lotes em condomínio à beira mar no litoral sul de Alagoas.<br><br>✅ Entrada facilitada<br>✅ Parcelas mensais de R$ 851,10<br>✅ Intercaladas anuais de R$ 4.627,86<br><br>⚜️Fellipe Carneiro | Creci 6753<br>📱(82) 9 9999-0589</div>
+        </div>
+        <div class="gc-metrics">
+          <div class="gc-metric primary"><span>Investido</span><b>R$ 165,79</b></div>
+          <div class="gc-metric primary"><span>Leads CRM</span><b>23</b></div>
+          <div class="gc-metric primary"><span>Qualificados</span><b>3</b></div>
+          <div class="gc-metric"><span>Custo por lead</span><b>R$ 7,21</b></div>
+          <div class="gc-metric"><span>Custo por qualificado</span><b>R$ 55,26</b></div>
+          <div class="gc-metric"><span>Custo por visita</span><b>,</b></div>
+          <div class="gc-metric"><span>Tempo de análise</span><b>6 dias</b></div>
+        </div>
+        
+        <div class="funil">
+          <div class="funil-title">Como esses leads avançaram no CRM</div>
+          <div class="funil-row">
+            <div class="funil-cell"><span>Qualificados</span><b>3</b></div>
+            <div class="funil-cell"><span>Visita / Reunião</span><b>0</b></div>
+            <div class="funil-cell"><span>Negociação</span><b>0</b></div>
+            <div class="funil-cell"><span>Proposta</span><b>0</b></div>
+            <div class="funil-cell"><span>Contrato</span><b>0</b></div>
+            <div class="funil-cell"><span>Venda</span><b>0</b></div>
+            <div class="funil-cell"><span>Descartados</span><b>2</b></div>
+          </div>
+        </div>
+        <div class="gc-verdict">
+          <b>Por quê:</b> 3 qualificados gerados em 6 dias
+        </div>
+        <a href="https://www.facebook.com/ads/library/?id=120245959465810287&country=BR" target="_blank" class="ig-link">Ver no Meta Ads Library ↗</a>
+      </div>
+    </div>
+    
+
+    <div class="gc card-manter">
+      <div class="gc-img">
+        <img src="media/bk_120245959465910287_img_3f721181ba.jpg" alt="" />
+        <div class="vd-badge img">IMAGEM</div>
+        <div class="status-overlay"><span class="status-tag ativo">Ativo</span></div>
+      </div>
+      <div class="gc-body">
+        <div class="gc-head">
+          <div>
+            <div class="gc-camp-chip">Oásis 07/05</div>
+            <div class="gc-name">Entrada + Mensais</div>
+            <div class="gc-sub">Imagem · 25+ | Alagoas | Lote de terreno</div>
+          </div>
+          <span class="badge" style="background:#4B916D">MANTER</span>
+        </div>
+        <div class="gc-copy">
+          <div class="gc-copy-label">LEGENDA</div>
+          <div class="gc-copy-text">🏝️ Oasis Beach - Lotes em condomínio à beira mar no litoral sul de Alagoas.<br><br>✅ Entrada facilitada<br>✅ Parcelas mensais de R$ 851,10<br>✅ Intercaladas anuais de R$ 4.627,86<br><br>⚜️Fellipe Carneiro | Creci 6753<br>📱(82) 9 9999-0589</div>
+        </div>
+        <div class="gc-metrics">
+          <div class="gc-metric primary"><span>Investido</span><b>R$ 128,12</b></div>
+          <div class="gc-metric primary"><span>Leads CRM</span><b>19</b></div>
+          <div class="gc-metric primary"><span>Qualificados</span><b>2</b></div>
+          <div class="gc-metric"><span>Custo por lead</span><b>R$ 6,74</b></div>
+          <div class="gc-metric"><span>Custo por qualificado</span><b>R$ 64,06</b></div>
+          <div class="gc-metric"><span>Custo por visita</span><b>R$ 64,06</b></div>
+          <div class="gc-metric"><span>Tempo de análise</span><b>6 dias</b></div>
+        </div>
+        
+        <div class="funil">
+          <div class="funil-title">Como esses leads avançaram no CRM</div>
+          <div class="funil-row">
+            <div class="funil-cell"><span>Qualificados</span><b>0</b></div>
+            <div class="funil-cell"><span>Visita / Reunião</span><b>2</b></div>
+            <div class="funil-cell"><span>Negociação</span><b>0</b></div>
+            <div class="funil-cell"><span>Proposta</span><b>0</b></div>
+            <div class="funil-cell"><span>Contrato</span><b>0</b></div>
+            <div class="funil-cell"><span>Venda</span><b>0</b></div>
+            <div class="funil-cell"><span>Descartados</span><b>3</b></div>
+          </div>
+        </div>
+        <div class="gc-verdict">
+          <b>Por quê:</b> 2 qualificados gerados em 6 dias
+        </div>
+        <a href="https://www.facebook.com/ads/library/?id=120245959465910287&country=BR" target="_blank" class="ig-link">Ver no Meta Ads Library ↗</a>
+      </div>
+    </div>
+    
+
+    <div class="gc card-pausar">
+      <div class="gc-img">
+        <img src="media/bk_120245959465980287_img_3f721181ba.jpg" alt="" />
+        <div class="vd-badge img">IMAGEM</div>
+        <div class="status-overlay"><span class="status-tag ativo">Ativo</span></div>
+      </div>
+      <div class="gc-body">
+        <div class="gc-head">
+          <div>
+            <div class="gc-camp-chip">Oásis 07/05</div>
+            <div class="gc-name">Entrada + Mensais</div>
+            <div class="gc-sub">Imagem · 25+ | BR | Semelhante compradores 2%</div>
+          </div>
+          <span class="badge" style="background:#EE4C20">PAUSAR</span>
+        </div>
+        <div class="gc-copy">
+          <div class="gc-copy-label">LEGENDA</div>
+          <div class="gc-copy-text">🏝️ Oasis Beach - Lotes em condomínio à beira mar no litoral sul de Alagoas.<br><br>✅ Entrada facilitada<br>✅ Parcelas mensais de R$ 851,10<br>✅ Intercaladas anuais de R$ 4.627,86<br><br>⚜️Fellipe Carneiro | Creci 6753<br>📱(82) 9 9999-0589</div>
+        </div>
+        <div class="gc-metrics">
+          <div class="gc-metric primary"><span>Investido</span><b>R$ 143,66</b></div>
+          <div class="gc-metric primary"><span>Leads CRM</span><b>17</b></div>
+          <div class="gc-metric primary"><span>Qualificados</span><b>0</b></div>
+          <div class="gc-metric"><span>Custo por lead</span><b>R$ 8,45</b></div>
+          <div class="gc-metric"><span>Custo por qualificado</span><b>,</b></div>
+          <div class="gc-metric"><span>Custo por visita</span><b>,</b></div>
+          <div class="gc-metric"><span>Tempo de análise</span><b>6 dias</b></div>
+        </div>
+        
+        <div class="funil">
+          <div class="funil-title">Como esses leads avançaram no CRM</div>
+          <div class="funil-row">
+            <div class="funil-cell"><span>Qualificados</span><b>0</b></div>
+            <div class="funil-cell"><span>Visita / Reunião</span><b>0</b></div>
+            <div class="funil-cell"><span>Negociação</span><b>0</b></div>
+            <div class="funil-cell"><span>Proposta</span><b>0</b></div>
+            <div class="funil-cell"><span>Contrato</span><b>0</b></div>
+            <div class="funil-cell"><span>Venda</span><b>0</b></div>
+            <div class="funil-cell"><span>Descartados</span><b>3</b></div>
+          </div>
+        </div>
+        <div class="gc-verdict">
+          <b>Por quê:</b> 17 leads em 6 dias e zero qualificou
+        </div>
+        <a href="https://www.facebook.com/ads/library/?id=120245959465980287&country=BR" target="_blank" class="ig-link">Ver no Meta Ads Library ↗</a>
+      </div>
+    </div>
+    
+
+    <div class="gc card-aguardar">
+      <div class="gc-img">
+        <img src="media/bk_120245959465880287_img_b722f0ecc2.jpg" alt="" />
+        <div class="vd-badge img">IMAGEM</div>
+        <div class="status-overlay"><span class="status-tag ativo">Ativo</span></div>
+      </div>
+      <div class="gc-body">
+        <div class="gc-head">
+          <div>
+            <div class="gc-camp-chip">Oásis 07/05</div>
+            <div class="gc-name">Valor total + Mensais</div>
+            <div class="gc-sub">Imagem · 25+ | Alagoas | Lote de terreno</div>
+          </div>
+          <span class="badge" style="background:#D97706">AGUARDAR</span>
+        </div>
+        <div class="gc-copy">
+          <div class="gc-copy-label">LEGENDA</div>
+          <div class="gc-copy-text">🏝️ Oasis Beach - Lotes em condomínio à beira mar no litoral sul de Alagoas.<br><br>✅ Entrada facilitada<br>✅ Parcelas mensais de R$ 851,10<br>✅ Intercaladas anuais de R$ 4.627,86<br><br>⚜️Fellipe Carneiro | Creci 6753<br>📱(82) 9 9999-0589</div>
+        </div>
+        <div class="gc-metrics">
+          <div class="gc-metric primary"><span>Investido</span><b>R$ 13,58</b></div>
+          <div class="gc-metric primary"><span>Leads CRM</span><b>3</b></div>
+          <div class="gc-metric primary"><span>Qualificados</span><b>0</b></div>
+          <div class="gc-metric"><span>Custo por lead</span><b>R$ 4,53</b></div>
+          <div class="gc-metric"><span>Custo por qualificado</span><b>,</b></div>
+          <div class="gc-metric"><span>Custo por visita</span><b>,</b></div>
+          <div class="gc-metric"><span>Tempo de análise</span><b>6 dias</b></div>
+        </div>
+        
+        <div class="funil">
+          <div class="funil-title">Como esses leads avançaram no CRM</div>
+          <div class="funil-row">
+            <div class="funil-cell"><span>Qualificados</span><b>0</b></div>
+            <div class="funil-cell"><span>Visita / Reunião</span><b>0</b></div>
+            <div class="funil-cell"><span>Negociação</span><b>0</b></div>
+            <div class="funil-cell"><span>Proposta</span><b>0</b></div>
+            <div class="funil-cell"><span>Contrato</span><b>0</b></div>
+            <div class="funil-cell"><span>Venda</span><b>0</b></div>
+            <div class="funil-cell"><span>Descartados</span><b>0</b></div>
+          </div>
+        </div>
+        <div class="gc-verdict">
+          <b>Por quê:</b> Só 3 leads em 6 dias, amostra pequena pra decidir
+        </div>
+        <a href="https://www.facebook.com/ads/library/?id=120245959465880287&country=BR" target="_blank" class="ig-link">Ver no Meta Ads Library ↗</a>
+      </div>
+    </div>
+    
+
+    <div class="gc card-não-entregou">
+      <div class="gc-img">
+        <img src="media/bk_120245959466010287_img_b52df09f52.jpg" alt="" />
+        <div class="vd-badge img">IMAGEM</div>
+        <div class="status-overlay"><span class="status-tag ativo">Ativo</span></div>
+      </div>
+      <div class="gc-body">
+        <div class="gc-head">
+          <div>
+            <div class="gc-camp-chip">Oásis 07/05</div>
+            <div class="gc-name">Aérea + Mensais</div>
+            <div class="gc-sub">Imagem · 25+ | Alagoas | Lote de terreno</div>
+          </div>
+          <span class="badge" style="background:#9ca3af">Não entregou</span>
+        </div>
+        <div class="gc-copy">
+          <div class="gc-copy-label">LEGENDA</div>
+          <div class="gc-copy-text">🏝️ Oasis Beach - Lotes em condomínio à beira mar no litoral sul de Alagoas.<br><br>✅ Entrada facilitada<br>✅ Parcelas mensais de R$ 851,10<br>✅ Intercaladas anuais de R$ 4.627,86<br><br>⚜️Fellipe Carneiro | Creci 6753<br>📱(82) 9 9999-0589</div>
+        </div>
+        <div class="gc-metrics">
+          <div class="gc-metric primary"><span>Investido</span><b>R$ 1,85</b></div>
+          <div class="gc-metric primary"><span>Leads CRM</span><b>0</b></div>
+          <div class="gc-metric primary"><span>Qualificados</span><b>0</b></div>
+          <div class="gc-metric"><span>Custo por lead</span><b>,</b></div>
+          <div class="gc-metric"><span>Custo por qualificado</span><b>,</b></div>
+          <div class="gc-metric"><span>Custo por visita</span><b>,</b></div>
+          <div class="gc-metric"><span>Tempo de análise</span><b>6 dias</b></div>
+        </div>
+        
+        <div class="gc-verdict">
+          <b>Por quê:</b> Meta não distribuiu
+        </div>
+        <a href="https://www.facebook.com/ads/library/?id=120245959466010287&country=BR" target="_blank" class="ig-link">Ver no Meta Ads Library ↗</a>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="footer-note">
+  Análise gerada em 13/05/2026, 18:08 · Fonte: Meta Ads (conta Somus Performance, Sul) + Bitrix24 CAT 45<br>
+  Janela: 04 a 13 de maio de 2026 · Cada linha = um criativo único em uma campanha + público específico
+</div>
+
+</div>
+</body>
+</html>

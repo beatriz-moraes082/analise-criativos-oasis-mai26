@@ -1,0 +1,8 @@
+*.json
+*.pdf
+*.xlsx
+*.csv
+build_report.py
+.DS_Store
+__pycache__/
+*.pyc
